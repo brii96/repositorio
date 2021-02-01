@@ -1,0 +1,223 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#header{
+    background: linear-gradient(90deg,rgb(11, 10, 11),rgb(29, 29, 32));
+    background-image: url(https://www.graphicsprings.com/images/front/hero-pattern.gif); 
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg,rgb(8, 8, 10),rgb(48, 48, 53));
+}
+
+#logo{
+    height: 50px;
+    width: 100px;
+}
+
+#foto{
+    height: 50%;
+    width: 100%;
+}
+
+#about-me{
+    display: flex;
+}
+
+#section-home{
+    background-image: url("./img/FondoCV.png");
+    height: 600px;
+    width: 100%;
+}
+
+p, h1, h2, h3, h4{
+    color: white;
+}
+
+h5{
+    color: white;
+    margin-left: 10px;
+}
+
+hr{
+    background-color: white;
+    /* color: white; */
+}
+
+.img-contact{
+    width: 80px;
+    height: 80px;
+}
+
+.img-contact:hover{
+    fill: gray;
+}
+
+.img-contact-mariadb{
+    width: 80px;
+    height: 80px;
+}
+
+.img-contact-mariadb:hover{
+    fill: gray;
+}
+
+.titulo{
+    text-align: center;
+}
+
+#icon-about{
+    width: 80px;
+    height: 80px;
+}
+
+#section-contact{
+    background-image: url("./img/contactenos\ 1.svg");
+    height: 600px;
+    width: 100%;
+}
+
+label{
+    color: white;
+}
+
+.path {
+    fill:blue;
+  }
+
+#section-about{
+    margin-right: 110px;
+    margin-left: 110px;
+}
+
+/* Tablet */
+@media (max-width: 992px){
+
+    *{
+        margin-right: 0px;
+        padding-left: 0px;
+        list-style: none;
+    }
+
+    #section-about{
+        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #about-me{
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #section-about{
+        padding: 0px;
+        margin-left: 0px;
+        /* margin-right: 0px; */
+    }
+        
+    #foto{
+        height: 70%;
+        width: 70%;
+        margin-left: 90px;
+    }
+
+    #titulo{
+        width: 99%;
+    }
+
+    .img-contact{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .img-contact-mariadb{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 423px){
+    *{
+        margin-right: 0px;
+        padding-left: 0px;
+        list-style: none;
+    }
+
+    #home{
+        padding: 1rem!important;
+    }
+
+    #about-me{
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #about-me2{
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #titulo{
+        width: 100%;
+        padding-right: 3px;
+        padding-left: 3px;
+        width: 100%;
+    }
+
+    #foto{
+        height: 70%;
+        width: 70%;
+        margin-left: 60px;
+    }
+
+    #section-about{
+        padding: 0px;
+        margin-left: 0px;
+    }
+        
+    #section-about{
+        width: 100%;
+        padding-right: 12px;
+        padding-left: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    #section-contact .container ul{
+        padding: 1rem!important;
+    }
+
+    #contact1{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #contact2{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .img-contact{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .img-contact-mariadb{
+        width: 50px;
+        height: 50px;
+    }
+}

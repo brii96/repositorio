@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portafolio</title>
+    <link rel="shortcut icon" href="img/icon-B.png">
+    <link rel="stylesheet" href="report-styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <!--Firestore-->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div id="header" class="bg-success">
+     
+        <div class="ml-4 mr-4 ">
+            <nav id="navegacion" class="navbar navbar-dark text-white navbar-expand-md sticky-top">
+
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo" src="./img/logo-icon.svg" class="d-inline-block align-top" alt="logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation ">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo01">
+
+                    <div class="navbar-nav text-center">
+                        <a class="nav-link" href="index.html" title="home">Home</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div id="tmapet" class="text-center pt-3 pb-1">
+        <h3>Registro de animales en busca de un hogar</h3>
+        <p>La siguiente interfaz de Registro tiene por objetivo realizar un reporte, modificar y adoptar un animal perdido
+            o en situacion de calle que necesite un hogar </p>
+    </div>
+
+    <div class="container my-3">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo">Agregar Reporte
+        </button>
+
+        <!--MODAL INICIO-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--MODAL HEADER-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Formulario de Reporte</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!--MODAL BODY-->
+                    <div class="modal-body">
+                        <form id="formReport">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Nombre" class="form-control my-2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="sex" placeholder="Sexo" class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="years" placeholder="Años" class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="months" placeholder="Meses" class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="description" placeholder="Ingrese una breve descripcion"
+                                    class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="mail" placeholder="Mail de contacto" class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="state" placeholder="Estado de la mascota"
+                                    class="form-control my-2">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="specie" placeholder="Especie (Gato o Perro)"
+                                    class="form-control my-2">
+                            </div>
+
+                        </form>
+                    </div>
+                    <!--MODAL FOOTER-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button class="btn btn-info" id="button" data-dismiss="modal" onclick="guardar()"> Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--Tabla-->
+        <table id="table-reports" class="table table-responsive my-3" >
+            <thead class="bg-success text-white">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Años</th>
+                    <th scope="col">Meses</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Especie</th>
+
+                </tr>
+            </thead>
+            <tbody id="viewReports">
+                <!--Relleno de tabla de forma dinamica-->
+            </tbody>
+        </table>
+    </div>
+    
+    <!--JQuery-->
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!--Sweet Alert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.5.1/dist/sweetalert2.all.min.js"></script>
+
+    <!--Firebase-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase.js"></script>
+    <script src="main-report.js"></script>
+    </script>
+</body>
+
+</html>

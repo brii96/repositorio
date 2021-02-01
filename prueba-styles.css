@@ -1,0 +1,236 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+   background: linear-gradient(90deg,rgb(8, 8, 10),rgb(48, 48, 53));
+}
+
+p, h1, h2, h3, h4{
+    color: white;
+}
+
+hr{
+    background-color: white;
+}
+
+.titulo{
+    text-align: center;
+}
+
+#img-contact{
+    width: 80px;
+    height: 80px;
+}
+
+#foto{
+    height: 40%;
+    width: 100%;
+}
+
+#about-me{
+    display: flex;
+}
+
+#section-contact{
+    background-image: url("./img/contactenos\ 1.svg");
+    height: 600px;
+    width: 100%;    
+}
+
+#img-contact-microstrategy{
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 992px){
+    #about-me{
+        display: block;
+        margin-left: 100px;
+    }
+
+        
+    #foto{
+        height: 100%;
+        width: 100%;1
+    }
+
+    #titulo{
+        max-width: 84%;
+    }
+} */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#header{
+    background: linear-gradient(90deg,rgb(11, 10, 11),rgb(29, 29, 32));
+    background-image: url(https://www.graphicsprings.com/images/front/hero-pattern.gif); 
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg,rgb(8, 8, 10),rgb(48, 48, 53));
+}
+
+#logo{
+    height: 50px;
+    width: 100px;
+}
+
+#foto{
+    height: 50%;
+    width: 100%;
+}
+
+#about-me{
+    display: flex;
+}
+
+#section-home{
+    background-image: url("./img/FondoCV.png");
+    height: 600px;
+    width: 100%;
+}
+
+p, h1, h2, h3, h4{
+    color: white;
+}
+
+h5{
+    color: white;
+    margin-left: 10px;
+}
+
+hr{
+    background-color: white;
+    /* color: white; */
+}
+
+#img-contact{
+    width: 80px;
+    height: 80px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+#icon-about{
+    width: 80px;
+    height: 80px;
+}
+
+#icon-about-microstrategy{
+    width: 150px;
+    height: 150px;
+}
+
+#section-contact{
+    background-image: url("./img/contactenos\ 1.svg");
+    height: 600px;
+    width: 100%;
+}
+
+label{
+    color: white;
+}
+
+.path {
+    fill:blue;
+  }
+
+
+#img-contact-microstrategy{
+    width: 150px;
+    height: 150px;
+}
+
+#section-about{
+    margin-right: 110px;
+    margin-left: 110px;
+}
+
+@media (max-width: 510px){
+    *{
+        margin-right: 0px;
+        padding-left: 0px;
+        list-style: none;
+    }
+
+    #about-me{
+        display: block;
+        margin-left: 100px;
+        margin-right: 0px;
+    }
+
+    #section-about{
+        padding: 0px;
+        margin-left: 0px;
+        /* margin-right: 0px; */
+    }
+        
+    #foto{
+        height: 70%;
+        width: 70%;
+        margin-left: 50px;
+    }
+
+    #titulo{
+        max-width: 84%;
+    }
+}
+
+@media (max-width: 992px){
+    *{
+        margin-right: 0px;
+        padding-left: 0px;
+        list-style: none;
+    }
+
+    #about-me{
+        display: block;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    #about-me2{
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #section-about{
+        padding: 0px;
+        margin-left: 0px;
+        /* margin-right: 0px; */
+    }
+        
+    #foto{
+        height: 70%;
+        width: 70%;
+        margin-left: 15px;
+    }
+
+    #titulo{
+        max-width: 100%;
+    }
+
+    .container{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
